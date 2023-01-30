@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  cleancode:
+    build:
+      context: ./
+    container_name: cleancode
+    networks:
+      - clean-code-network
+    volumes:
+      - ./:/usr/src/app
+    tty: true
+
+networks:
+  clean-code-network:
+    driver: bridge
